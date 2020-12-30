@@ -1,0 +1,20 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-BatteryMan-8998.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\BatteryManEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryDude.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryMan.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryManCharacter.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryManGameMode.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryDude.gen.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryMan.init.gen.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryManCharacter.gen.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\BatteryManGameMode.gen.cpp.obj"
+"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\Default.rc2.res"
+/OUT:"C:\Users\Emman\Documents\Unreal Projects\BatteryMan\Intermediate\Build\Win64\UE4Editor\Development\BatteryMan\UE4Editor-BatteryMan-8998.lib"
+/INCLUDE:IMPLEMENT_MODULE_BatteryMan
