@@ -4,5 +4,6 @@ A Game made using C++ with Unreal Engine 4 with the objective to keep collecting
 
 ## TO DO:
 
-Difficulty levels
-Code Comments
+- Difficulty levels
+
+- Code Comments
