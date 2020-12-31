@@ -30,6 +30,7 @@ ABatteryDude::ABatteryDude()
 	FollowCamera->bUsePawnControlRotation = false;
 
 	bDead = false;
+	Power = 100.0f;
 
 }
 
@@ -97,6 +98,12 @@ void ABatteryDude::OnBeginOverlap(UPrimitiveComponent* HitComp,
 	bool bFromSweep, const FHitResult & SweepResult)
 {
 	if (OtherActor->ActorHasTag("Recharge")) {
-		UE_LOG(LogTemp, Warning, TEXT("Collided with"));
+		
+		Power += 10.0f;
+		
+		if (Power > 100.0f)
+			Power = 100.0f;
+
+		OtherActor->Destroy();
 	}
 }
