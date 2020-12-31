@@ -2,6 +2,9 @@
 
 
 #include "BatteryDude.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "GameFramework/Actor.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABatteryDude::ABatteryDude()
@@ -41,12 +44,33 @@ void ABatteryDude::BeginPlay()
 	
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &ABatteryDude::OnBeginOverlap);
 
+	if (Player_Power_Widget_Class != nullptr) {
+
+		Player_Power_Widget = CreateWidget(GetWorld(), Player_Power_Widget_Class);
+		Player_Power_Widget->AddToViewport();
+
+	}
+
 }
 
 // Called every frame
 void ABatteryDude::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	Power -= DeltaTime * Power_Threshold;
+
+	if (Power <= 0) {
+		if (!bDead) {
+			bDead = true;
+
+			GetMesh()->SetSimulatePhysics(true);
+
+			FTimerHandle UnusedHandle;
+			GetWorldTimerManager().SetTimer(UnusedHandle, this, &ABatteryDude::RestartGame, 3.0f, false);
+
+		}
+	}
 
 }
 
@@ -93,6 +117,11 @@ void ABatteryDude::MoveRight(float Axis)
 
 }
 
+void ABatteryDude::RestartGame()
+{
+	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+}
+
 void ABatteryDude::OnBeginOverlap(UPrimitiveComponent* HitComp, 
 	AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, 
 	bool bFromSweep, const FHitResult & SweepResult)
@@ -107,3 +136,5 @@ void ABatteryDude::OnBeginOverlap(UPrimitiveComponent* HitComp,
 		OtherActor->Destroy();
 	}
 }
+
+
