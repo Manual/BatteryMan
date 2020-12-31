@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BatteryMan.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{E6395627-355A-45F9-8918-CA16FCCB0E6B}</UniqueIdentifier>
+      <UniqueIdentifier>{2D4187F6-CB17-4EF5-9E84-6BDE31F75ED3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatteryMan.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\BatteryManEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{D2CF6A67-0EC0-4DEC-B58B-167D42D76300}</UniqueIdentifier>
+      <UniqueIdentifier>{B4D51219-7717-4363-8117-DACA8A843924}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BatteryMan">
-      <UniqueIdentifier>{7B102551-D702-4872-8ADA-74CDE2DA8110}</UniqueIdentifier>
+      <UniqueIdentifier>{E665441B-01F7-4528-88FE-B884CF39D22B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BatteryMan\BatteryDude.cpp">
       <Filter>Source\BatteryMan</Filter>
@@ -57,6 +59,12 @@
       <Filter>Source\BatteryMan</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BatteryMan\BatteryManGameMode.h">
+      <Filter>Source\BatteryMan</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BatteryMan\BatteryMan_GameMode.cpp">
+      <Filter>Source\BatteryMan</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BatteryMan\BatteryMan_GameMode.h">
       <Filter>Source\BatteryMan</Filter>
     </ClInclude>
   </ItemGroup>
