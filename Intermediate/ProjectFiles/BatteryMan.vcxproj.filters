@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BatteryMan.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2D4187F6-CB17-4EF5-9E84-6BDE31F75ED3}</UniqueIdentifier>
+      <UniqueIdentifier>{FBF6E507-7E99-4EC2-ADF2-EFE6BD767D6F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BatteryMan.Target.cs">
       <Filter>Source</Filter>
@@ -13,8 +13,9 @@
     </None>
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{B4D51219-7717-4363-8117-DACA8A843924}</UniqueIdentifier>
+      <UniqueIdentifier>{1F191B71-569D-40D6-BA6B-F3020137A3EC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BatteryMan">
-      <UniqueIdentifier>{E665441B-01F7-4528-88FE-B884CF39D22B}</UniqueIdentifier>
+      <UniqueIdentifier>{3661CC12-A471-4DD7-8F73-A7E4E11997CE}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BatteryMan\BatteryDude.cpp">
       <Filter>Source\BatteryMan</Filter>

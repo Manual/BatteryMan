@@ -149,11 +149,11 @@ void EmptyLinkFunctionForGeneratedCodeBatteryDude() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Power_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Power;
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Power;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Power_Threshold_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Power_Threshold;
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Power_Threshold;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Player_Power_Widget_Class_MetaData[];
 #endif
@@ -198,14 +198,14 @@ void EmptyLinkFunctionForGeneratedCodeBatteryDude() {}
 		{ "ModuleRelativePath", "BatteryDude.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power = { "Power", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatteryDude, Power), METADATA_PARAMS(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power = { "Power", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatteryDude, Power), METADATA_PARAMS(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold_MetaData[] = {
 		{ "Category", "BatteryDude" },
 		{ "ModuleRelativePath", "BatteryDude.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold = { "Power_Threshold", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatteryDude, Power_Threshold), METADATA_PARAMS(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold = { "Power_Threshold", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatteryDude, Power_Threshold), METADATA_PARAMS(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_Threshold_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryDude_Statics::NewProp_Player_Power_Widget_Class_MetaData[] = {
 		{ "Category", "UI HUD" },
@@ -247,7 +247,7 @@ void EmptyLinkFunctionForGeneratedCodeBatteryDude() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABatteryDude, 3175011565);
+	IMPLEMENT_CLASS(ABatteryDude, 201411698);
 	template<> BATTERYMAN_API UClass* StaticClass<ABatteryDude>()
 	{
 		return ABatteryDude::StaticClass();

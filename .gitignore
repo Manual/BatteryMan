@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/WindowsNoEditor
+/Saved
+/Intermediate
+/Content
+/Binaries

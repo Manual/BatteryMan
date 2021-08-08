@@ -10,9 +10,9 @@
 	{
 		"MajorVersion": 4,
 		"MinorVersion": 26,
-		"PatchVersion": 0,
-		"Changelist": 14830424,
-		"CompatibleChangelist": 0,
+		"PatchVersion": 2,
+		"Changelist": 15973114,
+		"CompatibleChangelist": 14830424,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "++UE4+Release-4.26",
@@ -26,6 +26,22 @@
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Cmd.exe",
 			"Type": "Executable"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystem.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystem.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystemEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystemEditor.pdb",
+			"Type": "SymbolFile"
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2D.dll",
@@ -2240,6 +2256,10 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
@@ -2671,6 +2691,10 @@
 	"RuntimeDependencies": [
 		{
 			"Path": "$(ProjectDir)/BatteryMan.uproject",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/AchievementSystem.uplugin",
 			"Type": "UFS"
 		},
 		{

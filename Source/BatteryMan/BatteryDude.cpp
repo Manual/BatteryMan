@@ -5,6 +5,9 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"
+#include <string>
+#include "AchievementSubSystem.h"
+
 
 // Sets default values
 ABatteryDude::ABatteryDude()
@@ -19,7 +22,7 @@ ABatteryDude::ABatteryDude()
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
-	GetCharacterMovement()->JumpZVelocity = 600.0f;
+	GetCharacterMovement()->JumpZVelocity = 275.0f;
 	GetCharacterMovement()->AirControl = 0.2f;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
@@ -32,14 +35,36 @@ ABatteryDude::ABatteryDude()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
-	bDead = false;
-	Power = 100.0f;
+	bDead = false; // Player starts alive by default
+
+	Power = 1000; // Power represents health
+	Power_Threshold = 1; // Threshold is per tick, if using a timebased power loss (switched to movement instead)
+
+	LastPosition = FVector(-1640.002441, -700.0, 222.001526); // Spawn position must match the Playerstart, will change to match the map.
 
 }
+
+bool ABatteryDude::PositionJumped()
+{
+	FVector CurrentPosition = GetPosition();
+	if (FVector::Dist(CurrentPosition, LastPosition) > 15.0f)
+		return true;
+	else {
+		return false;
+	}
+} 
+
+FVector ABatteryDude::GetPosition()
+{
+	FVector MyPos = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+	return MyPos;
+}
+
 
 // Called when the game starts or when spawned
 void ABatteryDude::BeginPlay()
 {
+	UE_LOG(LogTemp, Warning, TEXT("BeginPlay"));
 	Super::BeginPlay();
 	
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &ABatteryDude::OnBeginOverlap);
@@ -58,9 +83,19 @@ void ABatteryDude::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	Power -= DeltaTime * Power_Threshold;
+	if (PositionJumped()) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Player moved illegally, restarting game")));
+		FTimerHandle UnusedHandle;
+		GetWorldTimerManager().SetTimer(UnusedHandle, this, &ABatteryDude::RestartGame, 3.0f, false);
+	}
+	LastPosition = GetPosition();
 
+	/*UE_LOG(LogTemp, Warning, TEXT("1st float value is: %f"), Power);
+	if (!junk_string(Power)="sadadsadasdadsdasdasdasda")
+	UE_LOG(LogTemp, Warning, TEXT("2nd float value is: %f"), Power);
+	UE_LOG(LogTemp, Warning, TEXT("Testing Power"));
 	if (Power <= 0) {
+		//UE_LOG(LogTemp, Warning, TEXT("The float value is: %f"), Power);
 		if (!bDead) {
 			bDead = true;
 
@@ -71,12 +106,13 @@ void ABatteryDude::Tick(float DeltaTime)
 
 		}
 	}
-
+	}*/
 }
 
 // Called to bind functionality to input
 void ABatteryDude::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
+	UE_LOG(LogTemp, Warning, TEXT("SetPlayerInputComponent"));
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
@@ -85,40 +121,89 @@ void ABatteryDude::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAxis("MoveForward", this, &ABatteryDude::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ABatteryDude::MoveRight);
-
-
-
 }
 
+void ABatteryDude::PowerDecrease(float Axis)
+{
+	FVector CurrentPosition = GetPosition();
+	if (Axis != 0) {
+		Power -= 1 ;
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Player Location: %s"), *CurrentPosition.ToString()));
+	}
+	//UE LOG contains source file potentially in memory
+	//UE_LOG(LogTemp, Warning, TEXT("The value is: %d"), Power);
+	if (Power <= 0) {
+		//UE_LOG(LogTemp, Warning, TEXT("The int value is: %d"), Power);
+		if (!bDead) {
+			bDead = true;
+
+			GetMesh()->SetSimulatePhysics(true);
+
+			FTimerHandle UnusedHandle;
+			GetWorldTimerManager().SetTimer(UnusedHandle, this, &ABatteryDude::RestartGame, 3.0f, false);
+		}
+	}
+}
 
 void ABatteryDude::MoveForward(float Axis)
 {
-	if (!bDead) {
-		
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation(0, Rotation.Yaw, 0);
+	//UE_LOG(LogTemp, Warning, TEXT("Moveforward"));
+	PowerDecrease(Axis);
 
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-		AddMovementInput(Direction, Axis);
-	}
+	FVector CurrentPosition = GetPosition();
 
+		if (!bDead) {
+			const FRotator Rotation = Controller->GetControlRotation();
+			const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+			const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+			AddMovementInput(Direction, Axis);
+			//UE_LOG(LogTemp, Warning, TEXT("The direction x: %f, and y: %f, and axis is: %f"), Direction.X, Direction.Y, Axis);
+
+			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Player Location: %s"), *CurrentPosition.ToString()));
+
+		}
+
+	/*FVector PreviousPosition = CurrentPosition;
+	float LERP;
+	float floatTimer = 0.0;
+	float Overshoot = floatTimer - 0.1;
+	float LerpAlpha = 1 - Overshoot / floatTimer;
+	CurrentPosition = PreviousPosition, CurrentPosition, LerpAlpha;
+	floatTimer = floatTimer - 0.1;
+	*/
+	//if (CurrentPosition == PreviousPosition) {
 }
-
 void ABatteryDude::MoveRight(float Axis)
 {
-	if (!bDead) {
+	//UE_LOG(LogTemp, Warning, TEXT("MoveRight"));
+	PowerDecrease(Axis);
 
-		const FRotator Rotation = Controller->GetControlRotation();
-		const FRotator YawRotation(0, Rotation.Yaw, 0);
+	FVector CurrentPosition = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 
-		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-		AddMovementInput(Direction, Axis);
-	}
+		if (!bDead) {
 
+			const FRotator Rotation = Controller->GetControlRotation();
+			const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+			const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+			AddMovementInput(Direction, Axis);
+
+			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Player Location: %s"), *CurrentPosition.ToString()));
+		}
+	//float CoordX = GetActorLocation.X();
+	/*FVector PreviousPosition = CurrentPosition;
+	float floatTimer = 0.0;
+	float Overshoot = floatTimer - 0.1;
+	float LerpAlpha = 1 - Overshoot / floatTimer;
+	CurrentPosition = PreviousPosition, CurrentPosition, LerpAlpha;
+	*/
+	//	if (CurrentPosition == PreviousPosition) {
 }
 
 void ABatteryDude::RestartGame()
 {
+	UE_LOG(LogTemp, Warning, TEXT("RestartGame"));
 	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
 
@@ -126,15 +211,59 @@ void ABatteryDude::OnBeginOverlap(UPrimitiveComponent* HitComp,
 	AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, 
 	bool bFromSweep, const FHitResult & SweepResult)
 {
+	UE_LOG(LogTemp, Warning, TEXT("OnBeginOverlap"));
 	if (OtherActor->ActorHasTag("Recharge")) {
 		
-		Power += 10.0f;
+		Power -= 250;
 		
-		if (Power > 100.0f)
-			Power = 100.0f;
+		if (Power > 1000)
+			Power = 1000;
 
 		OtherActor->Destroy();
 	}
+
+	if (OtherActor->ActorHasTag("FireStorm")) {
+		Power = -9001;
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("BURN!")));
+	}
+
+	if (OtherActor->ActorHasTag("DistanceFlag")) {
+
+		OtherActor->Destroy();
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Distance travelled achievement unlocked!")));
+	}
+
+	if (OtherActor->ActorHasTag("HeightFlag")) {
+
+		OtherActor->Destroy();
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Height achievement unlocked!")));
+	}
+
+	if (OtherActor->ActorHasTag("BurningFlag")) {
+
+		OtherActor->Destroy();
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Burning flag achievement unlocked!")));
+	}
+
 }
 
+void ABatteryDude::AchievementUnlockDistance()
+{
+	UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
+	UAchievementSubSystem* AchievemSubsystem = GameInstance->GetSubsystem<UAchievementSubSystem>();
+	AchievemSubsystem->Unlock(FName("DistanceFlag"));
+}
 
+/*
+void ABatteryDude::GetActorLocation() {
+
+	FVector MyCharacterPosition = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Player Location: %s"), *MyCharacterPosition.ToString()));
+
+}
+*/
