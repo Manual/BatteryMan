@@ -23,9 +23,11 @@ public:
 	// Sets default values for this character's properties
 	ABatteryDude();
 
-	bool PositionJumped();
+	//bool PositionJumped();
 
-	FVector GetPosition();
+	//FVector GetPosition();
+
+	void Achievements();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		USpringArmComponent* CameraBoom;
@@ -38,7 +40,7 @@ public:
 	void MoveRight(float Axis);
 
 	bool bDead = false;
-	FVector LastPosition;
+	//FVector LastPosition;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		int Power;
@@ -50,7 +52,8 @@ public:
 		void OnBeginOverlap(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComponent,
 			int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 
-	void AchievementUnlockDistance();
+	//bool Messages();
+
 
 	UPROPERTY(EditAnywhere, Category = "UI HUD")
 		TSubclassOf<UUserWidget> Player_Power_Widget_Class;
@@ -71,6 +74,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	//bool ResetPosition();
 	// Junk string for reverse engineering
+
 
 };

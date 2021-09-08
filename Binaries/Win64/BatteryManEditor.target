@@ -28,19 +28,19 @@
 			"Type": "Executable"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystem.dll",
+			"Path": "$(ProjectDir)/Plugins/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystem.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystem.pdb",
+			"Path": "$(ProjectDir)/Plugins/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystem.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystemEditor.dll",
+			"Path": "$(ProjectDir)/Plugins/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystemEditor.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystemEditor.pdb",
+			"Path": "$(ProjectDir)/Plugins/AchievementSystem/Binaries/Win64/UE4Editor-AchievementSystemEditor.pdb",
 			"Type": "SymbolFile"
 		},
 		{
@@ -368,14 +368,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MotoSynth/Binaries/Win64/UE4Editor-MotoSynth.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MotoSynth/Binaries/Win64/UE4Editor-MotoSynthEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlatformCrypto/Binaries/Win64/UE4Editor-PlatformCrypto.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -397,90 +389,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Lumin/MLSDK/Binaries/Win64/UE4Editor-MLSDK.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapMedia/Binaries/Win64/UE4Editor-MagicLeapMediaEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapMedia/Binaries/Win64/UE4Editor-MagicLeapMediaFactory.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapMedia/Binaries/Win64/UE4Editor-MagicLeapMediaCodecFactory.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeap.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapAR.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapARPinImpl.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapAudio.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapController.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapEyeTracker.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapHandTracking.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapHelperOpenGL.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapHelperVulkan.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapIdentity.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapImageTracker.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapPlanes.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapPrivileges.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapSecureStorage.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor-MagicLeapHandMeshing.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapPassableWorld/Binaries/Win64/UE4Editor-MagicLeapARPin.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapPassableWorld/Binaries/Win64/UE4Editor-MagicLeapSharedWorld.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapLightEstimation/Binaries/Win64/UE4Editor-MagicLeapLightEstimation.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -636,14 +544,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCapture.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCaptureEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/CableComponent/Binaries/Win64/UE4Editor-CableComponent.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -665,10 +565,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/GooglePAD/Binaries/Win64/UE4Editor-GooglePADEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/LocationServicesBPLibrary/Binaries/Win64/UE4Editor-LocationServicesBPLibrary.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -2204,19 +2100,11 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-InputDevice.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Voice.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-AudioCaptureCore.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-AudioCaptureRtAudio.dll",
+			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-InputDevice.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -2256,7 +2144,7 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/Binaries/Win64/UE4Editor.modules",
+			"Path": "$(ProjectDir)/Plugins/AchievementSystem/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2464,10 +2352,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MotoSynth/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlatformCrypto/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
@@ -2481,22 +2365,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Lumin/MLSDK/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapMedia/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapPassableWorld/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapLightEstimation/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2592,10 +2460,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/CableComponent/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
@@ -2613,10 +2477,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/GooglePAD/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/LocationServicesBPLibrary/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -2694,7 +2554,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/AchievementSystem/AchievementSystem.uplugin",
+			"Path": "$(ProjectDir)/Plugins/AchievementSystem/AchievementSystem.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2902,10 +2762,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/MotoSynth/MotoSynth.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlatformCrypto/PlatformCrypto.uplugin",
 			"Type": "UFS"
 		},
@@ -2923,22 +2779,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Lumin/MLSDK/MLSDK.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapMedia/MagicLeapMedia.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeap/MagicLeap.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapPassableWorld/MagicLeapPassableWorld.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Lumin/MagicLeapLightEstimation/MagicLeapLightEstimation.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3042,10 +2882,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AudioCapture/AudioCapture.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/CableComponent/CableComponent.uplugin",
 			"Type": "UFS"
 		},
@@ -3063,10 +2899,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/GooglePAD/GooglePAD.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/LocationServicesBPLibrary/LocationServicesBPLibrary.uplugin",
 			"Type": "UFS"
 		},
 		{

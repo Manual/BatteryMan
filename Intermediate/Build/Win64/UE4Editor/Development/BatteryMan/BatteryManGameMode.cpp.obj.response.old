@@ -236,6 +236,9 @@
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\MRMesh
 /I Runtime\MRMesh\Public
+/I ..\Plugins\Marketplace\AchievementSystem\Intermediate\Build\Win64\UE4Editor\Inc\AchievementSystem
+/I ..\Plugins\Marketplace\AchievementSystem\Source
+/I ..\Plugins\Marketplace\AchievementSystem\Source\AchievementSystem\Public
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf

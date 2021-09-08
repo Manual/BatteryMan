@@ -195,7 +195,9 @@ void EmptyLinkFunctionForGeneratedCodeBatteryDude() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData[] = {
 		{ "Category", "BatteryDude" },
+		{ "Comment", "//FVector LastPosition;\n" },
 		{ "ModuleRelativePath", "BatteryDude.h" },
+		{ "ToolTip", "FVector LastPosition;" },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power = { "Power", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatteryDude, Power), METADATA_PARAMS(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Power_MetaData)) };
@@ -209,7 +211,9 @@ void EmptyLinkFunctionForGeneratedCodeBatteryDude() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryDude_Statics::NewProp_Player_Power_Widget_Class_MetaData[] = {
 		{ "Category", "UI HUD" },
+		{ "Comment", "//bool Messages();\n" },
 		{ "ModuleRelativePath", "BatteryDude.h" },
+		{ "ToolTip", "bool Messages();" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABatteryDude_Statics::NewProp_Player_Power_Widget_Class = { "Player_Power_Widget_Class", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABatteryDude, Player_Power_Widget_Class), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Player_Power_Widget_Class_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryDude_Statics::NewProp_Player_Power_Widget_Class_MetaData)) };
@@ -247,7 +251,7 @@ void EmptyLinkFunctionForGeneratedCodeBatteryDude() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABatteryDude, 201411698);
+	IMPLEMENT_CLASS(ABatteryDude, 2348221006);
 	template<> BATTERYMAN_API UClass* StaticClass<ABatteryDude>()
 	{
 		return ABatteryDude::StaticClass();
