@@ -2,4 +2,4 @@
 Game to develop hacking skills
 
 ## TO DO:
-- Finishing touches
+- RSA token (or equivalent) on gaining Achievement
